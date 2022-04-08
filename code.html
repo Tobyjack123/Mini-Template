@@ -19,9 +19,12 @@
 
     <!--Custom CSS-->
     <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/prism.css">
 
     <!--favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
     <link rel="icon" type="img/png" href="img/favicon-32x32.png">
+    <link rel="icon" type="img/png" href="img/favicon-16x16.png">
 
 </head>
 
@@ -40,13 +43,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        <a class="nav-link" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/app.html">The App</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/code.html">The Code</a>
+                        <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">The Repo</a>
@@ -61,41 +64,50 @@
 
     <main class="flex-shrink-0">
         <div class="container mt-5">
-            <div class="row row-cols-1 row-cols-md-2">
-                <div class="col-12 col-md-8 order-last order-md-first">
-                    <h2 class="fw-bold">APP NAME: A Coding Challenge</h2>
-                    <h4>Your project description goes here.</h4>
+            <h1>THE CODE FOR App Name</h1>
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            
+//Step One - controller that accepts requests
+function getMessage(){
+    let msg = document.getElementById("txtMessage").value;
+    displayMessage(msg);
+}
 
-                    <ul class="checklist">
-                        <li><i class="bi bi-check"></i>CSS and Bootstrap</li>
-                        <li><i class="bi bi-check"></i>Javascript Fundamentals</li>
-                        <li><i class="bi bi-check"></i>Javascript Loops</li>
-                        <li><i class="bi bi-check"></i>Javascript Functions</li>
-                        <li><i class="bi bi-check"></i>Javascript Dom Manipulation</li>
-                        <li><i class="bi bi-check"></i>Javascript Dom if/then/else</li>
-                        <li><i class="bi bi-check"></i>Javascript Dom boolean logic</li>
-                    </ul>
+//Final Step - view, which displays stuff to the screen
+function displayMessage(message){
 
-                    <h3>Technologies Used</h3>
-                    <div class="techicons">
-                        <i class="devicon-bootstrap-plain colored"></i>
-                        <i class="devicon-javascript-plain"></i>
-                        <i class="devicon-html5-plain colored"></i>
-                        <i class="devicon-css3-plain colored"></i>
-                    </div>
+    //first get the ol element from the page
+    element = document.getElementById("results");
+
+    //next create a new li element
+    let item = document.createElement("li");
+    //add classes to the li element
+    item.classList.add("list-group-item");
+    //set the message for the li element
+    item.innerHTML = message;
+    
+    //add the new item to the list
+    element.appendChild(item);
+}
+                        </code>
+                    </pre>
                 </div>
-                <div class="col-12 col-md-4 mb-3">
-                    <img src="/img/APPNAMELogo.svg" class="img-fluid">
-                    <div class="mt-5 text-center">
-                        <a type="button" class="btn btn-outline-primary btn-lg">Try It Out</a>
-                    </div>
+                <div class="col-12 col-lg-4">
+                    <h5>The code is structured in two functions</h5>
+                    <h5>getMessage</h5>
+                    <p>Gets values from the user</p>
+                    <h5>displayMessage</h5>
+                    <p>Displays the items on the page</p>
                 </div>
             </div>
         </div>
     </main>
 
 
-    <footer class="footer mt-auto py-3 sticky-footer">
+    <footer class="footer mt-auto py-3 text-light sticky-footer">
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-lg-3 gy-2">
                 <div class="col order-last order-md-first">
@@ -123,6 +135,15 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script src="/js/prism.js"></script>
+    <script>
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true
+        })
     </script>
 </body>
 
