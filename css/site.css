@@ -1,16 +1,16 @@
-:root{
+:root {
     --cf-dark-color: #292929;
     --cf-light-color: #DFE3E4;
-    --cf-primary-color:#001e43;
+    --cf-primary-color: #001e43;
     --cf-secondary-color: #ff993b;
 }
 
-body{
+body {
     color: var(--cf-dark-color);
     font-size: 1.5rem;
 }
 
-nav{
+nav {
     background-color: var(--cf-dark-color);
 }
 
@@ -28,26 +28,35 @@ main>.container {
     color: var(--cf-light-color);
 }
 
-.socialicons>a{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--cf-primary-color);
+}
+
+.socialicons>a {
     color: var(--cf-light-color);
     font-size: 1.5rem;
 }
 
-.socialicons>a:hover{
+.socialicons>a:hover {
     color: var(--cf-secondary-color);
 }
 
-.checklist{
+.checklist {
     list-style: none;
 }
 
-.checklist i{
+.checklist i {
     color: var(--cf-secondary-color);
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.message{
+.message {
     font-size: 1.5rem;
     font-weight: bold;
     color: red;
